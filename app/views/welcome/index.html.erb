@@ -1,2 +1,28 @@
-<h1>Welcome#index    GRUPO 2 - ENGENHARIA WEB</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<html>
+	<head>
+		<link rel="shortcut icon" href="logo-small.png" type="image/png" />
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="login.css">
+		<title>Rubyconf</title>
+	</head>
+
+	<body>
+		<div id="topbox">
+			<div class="topboxsignin"><%= render partial: '/sessions/form' %></div>
+		</div>
+		
+		<div class="rubyconflogo"></div>
+
+		<div class="textbox">
+			<h2>Who we are?</h2>
+			<p>We are the group 2 of Web Engineering subject from Master degree in Informatics Enfineering, University of Minho.</p>
+
+			<h2>Participants Management</h2>
+			<p>Managing various types of participants, the type of tickets that each acquires and also generate credentials for those participants. You can also register the entry in the conference as well as additional tickets (eg for dinner)</p>
+			<br>
+			<div class="hh4"><%= render partial: '/sessions/form2' %></div>
+
+		</div>
+	</body>
+</html>
