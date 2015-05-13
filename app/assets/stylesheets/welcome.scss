@@ -1,3 +1,64 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-image: url(ruby_conf_big.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: Arial;
+  float: center;
+  text-align: center;
+}
+
+h1{
+  font-size: 60px;
+  margin-top: 90px;
+  margin-bottom: 70px;
+}
+
+h2{
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+p{
+  font-size: 15px;
+}
+
+#topbox {
+  background-color: #FFFFFF;
+  height: 60px;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+.hh4 {
+  float: center;
+  text-align: center;
+}
+
+.rubyconflogo {
+  background-image: url(logo.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.topboxsignin {
+  float: right;
+  display: inline-block;
+  width: 33%;
+}
+
+.textbox{
+  display: inline-block;
+  float: center;
+}
+
+.blue-text {
+  color: #212836;
+}
+

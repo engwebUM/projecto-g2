@@ -1,0 +1,16 @@
+<%= render './home/formTopBar' %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @extra.kind %>
+</p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @extra.money %>
+</p>
+
+<%= link_to 'Edit', edit_extra_path(@extra) %> |
+<%= link_to 'Back', extras_path %>
