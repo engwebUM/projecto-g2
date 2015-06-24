@@ -1,0 +1,29 @@
+<%= render './home/formTopBar' %>
+
+<%= form_tag add_multiple_extras_path, method: :put do %>
+
+<h1>Add Extras </h1>
+
+Add extras to <%= @participant.name %>
+  <br><br>
+
+
+  <% @extras.each do |extra|  %>
+  	<br>
+    <%= extra.kind %>
+    <%= check_box_tag "extras[]", extra.id %>
+  <% end %>
+
+  <br><br>
+  <div class="actions">
+    <%= button_to "Submit", participants_path, method: :submit,:type =>type="button",:class=>'btn btn-danger' %> 
+  </div>
+
+<% end %>
+
+<br><br><br><br>
+
+<div class="other-links">
+  <%= link_to t('.Back'), participants_path  %>
+</div>
+

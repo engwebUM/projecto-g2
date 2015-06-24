@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+gem "font-awesome-rails"
+
 #grupo2
 gem "codeclimate-test-reporter", group: :test
 gem 'rubocop', require: false

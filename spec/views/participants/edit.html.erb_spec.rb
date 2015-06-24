@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe "participants/edit", type: :view do
   before(:each) do
     @participant = assign(:participant, Participant.create!(
-      :name => "MyString",
-      :email => "MyString"
+      :name => "",
+      :email => "",
+      :appeared => false
     ))
   end
 
@@ -16,6 +17,8 @@ RSpec.describe "participants/edit", type: :view do
       assert_select "input#participant_name[name=?]", "participant[name]"
 
       assert_select "input#participant_email[name=?]", "participant[email]"
+
+      assert_select "input#participant_appeared[name=?]", "participant[appeared]"
     end
   end
 end

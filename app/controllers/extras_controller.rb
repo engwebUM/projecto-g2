@@ -29,7 +29,7 @@ class ExtrasController < ApplicationController
 
     respond_to do |format|
       if @extra.save
-        format.html { redirect_to @extra, notice: 'Extra was successfully created.' }
+        format.html { redirect_to "/extras", notice: 'Extra was successfully created.' }
         format.json { render :show, status: :created, location: @extra }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ExtrasController < ApplicationController
   def update
     respond_to do |format|
       if @extra.update(extra_params)
-        format.html { redirect_to @extra, notice: 'Extra was successfully updated.' }
+        format.html { redirect_to "/extras", notice: 'Extra was successfully updated.' }
         format.json { render :show, status: :ok, location: @extra }
       else
         format.html { render :edit }
@@ -62,6 +62,26 @@ class ExtrasController < ApplicationController
     end
   end
 
+
+  def add_multiple
+    @participant = Extra.test
+    @extras = Extra.find(params[:extras])
+    @extras.reject! do |extra|
+      Partextra.create :extra_id => extra.id,:kind => extra.kind, :participant_id => @participant
+    end   
+    redirect_to ("/participants") 
+  end
+
+  def rem_multiple
+    @i = Extra.last
+    Extra.destroy(params[:extras])
+      respond_to do |format|
+        format.html { redirect_to (:back) }
+        format.json { head :no_content }
+    end
+  end
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_extra
@@ -70,6 +90,6 @@ class ExtrasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def extra_params
-      params.require(:extra).permit(:kind, :money)
+      params.require(:extra).permit(:kind, :money,:participant)
     end
 end

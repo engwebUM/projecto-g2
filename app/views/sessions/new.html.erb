@@ -8,21 +8,159 @@
 	</head>
 
 	<body>
+
+
 		<div id="topbox">
+			<div class="rubyconfhome"></div>
 			<div class="topboxsignin"><%= render partial: '/sessions/form' %></div>
 		</div>
-		
-		<div class="rubyconflogo"></div>
 
-		<div class="textbox">
-			<h2>Who we are?</h2>
-			<p>We are the group 2 of Web Engineering subject from Master degree in Informatics Enfineering, University of Minho.</p>
+			<div class="w1">
+				<div class="rubyconflogo"></div>
+				
+				<div class="cloud x1"></div>
+				<div class="cloud x2"></div>
+				<div class="cloud x3"></div>
 
-			<h2>Participants Management</h2>
-			<p>Managing various types of participants, the type of tickets that each acquires and also generate credentials for those participants. You can also register the entry in the conference as well as additional tickets (eg for dinner)</p>
+				<div class="title darkblue">BadgeRinG</div>
+				<div class="subtitle red">The Fellowship of the Ruby</div>
+				<br>
+				<div class="hh4"><%= render partial: '/sessions/form2' %></div>
+			</div>
+
+		<div class="w2 ">
+			<br><br>
+			<div class="title2">Who are we?</div>
 			<br>
-			<div class="hh4"><%= render partial: '/sessions/form2' %></div>
+			<div class="subtitle2">We are the group 2 of Web Engineering subject from Master degree in Informatics Enfineering, University of Minho.</div>
+			<br><br>
+			<article class="Speaker">
+				<div class="Speaker-pictureWrapper">
+					<img alt="" class="Speaker-picture" src="/assets/an.png">
+				</div>
+				<div class="Speaker-name">
+					Ana Cruz
+				</div>
+				<div class= "Speaker-links"> 
+					<%= link_to "https://github.com/anamargarida" , method: :get do %> 
+						<i class="fa fa-github"></i>
+					<% end %>
+				</div>
+			</article>
+
+			<article class="Speaker">
+				<div class="Speaker-pictureWrapper">
+					<img alt="" class="Speaker-picture" src="/assets/xic.png">
+				</div>
+				<div class="Speaker-name">
+					Francisco Trindade
+				</div> 
+				<div class= "Speaker-links">
+
+					<%= link_to "https://github.com/franciscotrindade" , method: :get do  %> 
+						<i class="fa fa-github"></i>
+					<% end %>
+
+					<%= link_to "https://twitter.com/xicoalex" , method: :get do %> 
+						<i class="fa fa-twitter"></i>
+					<% end %>
+
+				</div>
+			</article>
+
+
+			<article class="Speaker">
+				<div class="Speaker-pictureWrapper">
+					<img alt="" class="Speaker-picture" src="/assets/isab.png">
+				</div>
+				<div class="Speaker-name">
+					Isabel Cruz
+				</div> 
+				<div class= "Speaker-links">
+					<%= link_to "https://github.com/isabelcruz" , method: :get do %> 
+						<i class="fa fa-github"></i>
+					<% end %>
+				</div>
+			</article>
+		</div>
+
+		<div class="w25">
+			<br><br>
+			<div class="title2">What is BadgeRinG?</div>
+			<br><br>
+			<div class="whatis"></div>
+			<br><br>
+			<div class="subtitle">
+				It enables to manage various types of participants.
+				<br>
+				It enables the creation of different tickets to each participant. 
+				<br>
+				It is a web application to help to manage the participants of RubyConf.
+				<br>
+				It lets you generate the credentials of the participants.
+			</div>
+			<br><br>
+		</div>
+
+
+		<div class="w3">
+			<br><br>
+			<div class="title2">How it works?</div>
+			<br>
+			<div class="subtitle">
+				<div class="step">
+					1 - Create tickets and extra tickets to your conference
+					<br><br><br>
+					<img src="/assets/img/ticks.png" width="180" alt="logotipo" >
+				</div>
+				<div class="step">
+					2 - Add new characters to your story
+					<br><br><br>
+					<img src="/assets/img/addss.png" width="180" alt="logotipo" >
+				</div>
+				<div class="step">
+					3 - Manage your characters
+					<br><br><br>
+					<img src="/assets/img/manage.png" width="180" alt="logotipo" >
+				</div>
+				<div class="step">
+					4 - Generate credentials for each character
+					<br><br><br>
+					<img src="/assets/img/olss.png" width="150" alt="logotipo" >
+				</div>
+			</div>
+			<br><br>
+		</div>
+
+		<div class="w4">
+			<br><br>
+			<div class="title2">What are the advantages?</div>
+			<br><br>
+			<div class="advantages"></div>
+			<br><br>
+			<div class="subtitle">
+				The user can manage the participants of his conference.
+				<br>
+				The user can register the entrance in the conference, as well as extra tickets.
+				<br>
+				The user can generate statistics of the participants of RubyConf.
+			</div>
+			<br><br>
+		</div>
+
+		<div class="w5">
+			<br><br><br><br><br>
+			<div class="title brown">BLA</div>
 
 		</div>
+
+
+	<div class="w10"></div>
+	<div class="w6">
+        <%= link_to "Sign Up", sign_up_path, :class => "btn btn-primary btn-lg"%>
+	</div>
+
+
 	</body>
+
 </div>

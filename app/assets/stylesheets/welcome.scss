@@ -1,14 +1,303 @@
 body{
-  background-image: url(ruby_conf_big.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
   color: white;
   font-family: Arial;
   float: center;
   text-align: center;
 }
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(./fonts/Adobe-Garamond-Pro_2012.woff);
+}
+
+@font-face {
+    font-family: FuturaFont;
+    src: url(./fonts/futura-normal.woff);
+}
+
+@font-face {
+    font-family: myTitleFont;
+    src: url(./fonts/RINGM___.woff);
+}
+
+
+
+
+.Speaker {
+  width:400px;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  -webkit-align-items:center;
+  -ms-flex-align:center;
+  align-items:center;
+  margin-bottom:50px;
+  display: inline-block;
+  float: center;
+  margin-top: 30px;
+}
+.Speaker-pictureWrapper {
+  width:160px;
+  height:160px;
+  overflow:hidden;
+  border-radius:50%;
+  border:6px solid #FACC26;
+  background-color:#FACC26;
+  margin-right: auto;
+  margin-left: auto;
+}
+.Speaker-picture {
+  width:100%;
+  margin:auto
+}
+
+.Speaker-name {
+  font-size: 25px; 
+  color:#C0D0EB;
+  margin-top:25px;
+  font-family: FuturaFont;
+  font-style: italic;
+}
+
+.Speaker-links {
+  font-size:26px
+}
+
+
+a:link { 
+ text-decoration:none; 
+} 
+
+a {
+  color:#5C749C;
+}
+
+a:hover{
+  color: #C0D0EB;
+}
+
+
+.title{
+  font-family: myTitleFont;
+  font-size: 60px;
+}
+
+.subtitle{
+  font-style: italic;
+  font-size: 25px; 
+  font-family: myFirstFont;
+}
+
+.title2{
+  font-family: FuturaFont;
+  font-size: 28px;
+}
+
+.subtitle2{
+  font-style: italic;
+  font-size: 22px; 
+  font-family: FuturaFont;
+}
+
+.darkblue{
+  color: #313E53;
+}
+
+.yellow {
+  color: #FCD119;
+}
+
+.rose{
+  color: #EF6D6C;
+}
+
+.black{
+  color: black;
+}
+
+.green{
+  color: #4EAD78;
+}
+
+.orange{
+  color: #F0654C;
+}
+
+.gray{
+  color: #5C6160;
+}
+
+.red{
+  color: #E8644A;
+}
+
+.whiteblue{
+  color: #C0D0EB;
+}
+
+.white{
+  color: white
+}
+
+.brown{
+  color:#363232;
+}
+
+
+.button{
+  font-family: myTitleFont;
+}
+
+.box-wall{
+    overflow:scroll;
+    overflow-x: hidden;
+    position: absolute;
+    background:#C0EEDA;
+    font-family: myFirstFont;
+    border-radius:0px;
+    width: 80%; 
+    height: 75vh;
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    bottom: 10%;
+    color: blue;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 5%;
+    border-radius: 10px;
+    border-bottom: 4px solid rgba(64,128,81,.05);
+  }
+
+.whatis {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  background: url(town22x.png) no-repeat  ;
+  background-attachment: scroll;
+  background-size: 100% 100%;
+  min-height: 420px;
+}
+
+.advantages {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  background: url(bridge.png) no-repeat;
+  background-attachment: scroll;
+  background-size: 110% 115%;
+  min-height: 420px;
+}
+
+.w1{
+  display: inline-block;
+  margin-top: 0px;
+  float: left;
+  position: relative;
+  background-image: url(mount.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-color: #DEFEF0;
+  width: 100%;
+  height: 100vh;
+  font-family: myFirstFont;
+}
+
+.w10{
+  display: inline-block;
+  margin-top: 0px;
+  float: left;
+  position: relative;
+  background-image: url(foots.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-color: #DEFEF0;
+  width: 100%;
+  height: 80vh;
+  margin-bottom: -142px; 
+  font-family: myFirstFont;
+}
+
+.w2{
+  background-color: #313E53;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: auto;
+  font-family: FuturaFont;
+}
+
+.w25{
+  background-color: #009C6E;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: auto;
+  font-family: FuturaFont;
+}
+
+
+.w3{
+  background-color: #F67373;
+  color:white;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  font-family: FuturaFont;
+}
+
+.w4{
+  background-color: #313E53;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: auto;
+  font-family: FuturaFont;
+}
+
+.w5{
+  background-color: white;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: auto;
+  font-family: FuturaFont;
+  min-height: 300px;
+}
+
+.w6{
+  background-color: #363232;
+  display: inline-block;
+  line-height: 350px;
+  color: white;
+  width: 100%;
+  height: 220px;
+  font-style: italic;
+  font-family:myFirstFont;
+}
+
+
+.rubyconflogo {
+  background-image: url(llgg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 280px;
+  width: 280px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  opacity: 1;
+}
+
+
 h1{
+  text-shadow: 0px 0px 4px rgba(34, 40, 54, 1);
   font-size: 60px;
   margin-top: 90px;
   margin-bottom: 70px;
@@ -23,34 +312,102 @@ p{
   font-size: 15px;
 }
 
+.step {
+  border-radius: 10px;
+  float: left;
+  color: white;
+  display: inline-block;
+  background:#FA9797;
+  width: 24.82%;
+  min-width: 315px;
+  height: auto;
+  min-height: 430px;
+  margin-top: 8px;
+  margin-right: 1px;
+  margin-left:1px;
+  margin-bottom: 20px;
+}
+
 #topbox {
-  background-color: #FFFFFF;
+  font-family: myTitleFont;
+  position: fixed;
+  top: 0px;
+  background-color: #67C184;
+  margin-top: 0px;
+  width: 100%;
   height: 60px;
-  margin-top: -8px;
-  margin-left: -8px;
+  box-shadow:0 4px 0 rgba(84,156,107,.2);
+  z-index: +10;
+}
+
+.rubyconfhome {
+  display: inline-block;
+  float: left;
+  background-image: url(logo-small.png);
+  background-size: 100%;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 50px;
+  width: 50px;
 }
 
 .hh4 {
+  font-style: italic;
+  font-family:myFirstFont;
   float: center;
   text-align: center;
 }
 
-.rubyconflogo {
-  background-image: url(logo.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 100px;
-  width: 300px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-}
 
 .topboxsignin {
+  display: inline-block;
+  float:right;
+  float: right;
+  height: 60px;
+  width: 340px;
+}
+
+
+.topboxsignin2{
+  text-align: center;
+  margin-top: 4px;
+  display: inline-block;
+  float: left;
+  width: 135px; 
+  height: 50px;
+}
+.topboxsignin2B{
+  text-align: center;
+  display: inline-block;
+  float: left;
+  width: 50px; 
+  height: 50px;
+  margin-right: 8px;
+}
+
+.topboxsignin3B{
+  text-align: center;
+  display: inline-block;
+  float: right;
+  width: 50px; 
+  height: 50px;
+  margin-right: 40px;
+}
+
+.button{
+  margin-top: 17px;
+}
+
+
+.topboxsignout {
   float: right;
   display: inline-block;
   width: 33%;
+}
+
+.backpage {
+  float: center;
+  margin-bottom: 60px;
 }
 
 .textbox{
@@ -62,3 +419,130 @@ p{
   color: #212836;
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  text-shadow: 0px 0px 4px rgba(34, 40, 54, 1);
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+}
+
+td {
+  font-size: 15px;
+  text-align: left;
+  background-color: #49544F;
+  box-shadow: 1px 1px 1px #3C4541;
+  padding: 15px;
+}
+
+.bigwhitetext{
+  font-size: 15px;
+}
+
+
+
+/** clouds **/
+
+
+
+
+/*Time to finalise the cloud shape*/
+.cloud {
+  width: 200px; height: 60px;
+  background: #fff;
+  
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  
+  position: absolute; 
+}
+
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute; 
+  background: #fff;
+  width: 100px; height: 80px;
+  position: absolute; top: -15px; left: 10px;
+  
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px; height: 120px;
+  top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+  top:90px;
+  z-index: -10;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+
+  -webkit-animation: moveclouds 415s linear infinite;
+  -moz-animation: moveclouds 415s linear infinite;
+  -o-animation: moveclouds 415s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  left: 200px;
+    top:205px;
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  transform: scale(0.3);
+  opacity: 0.6; /*opacity proportional to the size*/
+
+  
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 45s linear infinite;
+  -moz-animation: moveclouds 45s linear infinite;
+  -o-animation: moveclouds 45s linear infinite;
+}
+
+.x3 {
+  top:405px;
+  left: -200;
+  z-index: -10;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0.8; /*opacity proportional to the size*/
+
+  
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 85s linear infinite;
+  -moz-animation: moveclouds 85s linear infinite;
+  -o-animation: moveclouds 85s linear infinite;
+}
+
+
+
+
+@-webkit-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}

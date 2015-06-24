@@ -18,8 +18,32 @@
   <div class="field">
     <%= f.text_field :email, :placeholder=>"Email" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
-</div>
-<% end %>
+
+  <div class="bigwhitetext">
+    <div class="field">
+      Ticket <%= select(:participant,:ticket_id, Ticket.all.map { |ticket| [ticket.kind, ticket.id] })%>
+    </div>
+  </div>
+
+
+
+
+
+  <%= f.hidden_field :appeared, value: false %>
+
+
+
+
+      <br>
+
+      <div class="blue-text">
+        <div class="actions">
+          <%= f.submit :class=>'btn btn-danger'%>
+        </div>
+      </div>
+
+  <% end %> 
+
+
+

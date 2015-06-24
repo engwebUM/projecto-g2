@@ -1,13 +1,38 @@
 Rails.application.routes.draw do
+
+  resources :extras do
+    collection do
+      put 'add_multiple'
+    end
+  end
+
+  resources :partextras do
+    collection do
+      delete 'rem_multiple'
+    end
+  end
+
+
+  resources :participants
+
   resources :extras
 
   get 'home/index'
 
   resources :tickets
 
-  resources :participants
+  get '/participants/:id/addExtras', to: 'participants#addExtras', as: 'addExtras'
+  get '/participants/:id/remExtras', to: 'participants#remExtras', as: 'remExtras'
+
 
   root 'home#index'
+
+  Rails.application.routes.draw do
+    resources :users, controller: 'users', only: Clearance.configuration.user_actions
+  end
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
