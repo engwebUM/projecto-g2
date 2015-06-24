@@ -1,9 +1,15 @@
 <div class="blue-text">
+
+  <div class="text-field">
+    <%= form.text_field :name, type: 'name', :placeholder=>"Name" %>
+  </div>
+  <br>
   <div class="text-field">
     <%= form.text_field :email, type: 'email', :placeholder=>"Email" %>
   </div>
-
+  <br>
   <div class="password-field">
-    <%= form.password_field :password, :placeholder=>"Password" %>
+    <%= form.password_field :password, :placeholder=>"Password"%>
   </div>
+  <br>
 </div>

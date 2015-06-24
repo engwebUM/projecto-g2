@@ -1,19 +1,31 @@
 <div id="topbox">
+  <div class="rubyconfhome"></div>
   <div class="topboxsignin"><%= render partial: '/sessions/form' %></div>
 </div>
 
-<div id="clearance" class="sign-up">
-  <h2><%= t('.title') %></h2>
 
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
+<div class="box-wall">
+  <div id="clearance" class="sign-up">
+    <br><br><br>
 
-    <div class="submit-field">
-      <%= form.submit %>
+    <div class="title darkblue">
+      <h2><%= t('.title') %></h2>
     </div>
 
-    <div class="other-links">
-      <%= link_to t('.sign_in'), sign_in_path %>
-    </div>
-  <% end %>
+    <%= form_for @user do |form| %>
+      <%= render partial: '/users/form', object: form %>
+
+      <div class= "button">
+        <div class="submit-field">
+          <small>
+            <%= button_to "Sign up", sign_out_path, method: :get,:type =>type="button",:class=>'btn btn-danger' %>
+          </small>
+        </div>
+      </div>
+      <br>
+      <div class="other-links">
+        <%= link_to t('.sign_in'), sign_in_path  %>
+      </div>
+    <% end %>
+  </div>
 </div>

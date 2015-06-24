@@ -18,9 +18,8 @@
       <tr>
         <td><%= ticket.kind %></td>
         <td><%= ticket.money %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to "Edit", edit_ticket_path(ticket), method: :get, :class=>'btn btn-danger' %></td>
+        <td><%= button_to "Destroy", ticket, method: :delete, data: { confirm: 'Are you sure you want to remove the ticket '+ticket.kind+' from the list?' }, :class=>'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +27,9 @@
 
 <br>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<%= link_to "New Ticket", new_ticket_path, :class => "btn btn-primary btn-lg"%>
+
+<br><br><br><br>
+
+<div class="backpage"><%= button_to "Back", home_index_path, method: :get, :class=>'btn btn-danger' %></div>
+

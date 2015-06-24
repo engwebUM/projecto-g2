@@ -1,0 +1,32 @@
+<%= render './home/formTopBar' %>
+
+<%= form_tag rem_multiple_partextras_path, method: :delete do %>
+
+
+<h1>Rem Extras </h1>
+
+Remove extras to <%= @participant.name %>
+  <br><br>
+
+
+  <% @pextras.each do |pextra|  %>
+    <% if pextra.participant_id== @participant.id %>
+    	<br>
+      <%= pextra.kind %>
+      <%= check_box_tag "partextras[]", pextra.id%>
+    <% end%>
+  <% end %>
+
+  <br><br>
+  <div class="actions">
+    <%= button_to "Submit", participants_path, method: :submit,:type =>type="button",:class=>'btn btn-danger' %> 
+  </div>
+
+<% end %>
+
+<br><br><br><br>
+
+<div class="other-links">
+  <%= link_to t('.Back'), participants_path  %>
+</div>
+

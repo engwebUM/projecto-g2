@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513141248) do
+ActiveRecord::Schema.define(version: 20150623041334) do
 
   create_table "extras", force: :cascade do |t|
     t.string   "kind"
@@ -27,12 +27,29 @@ ActiveRecord::Schema.define(version: 20150513141248) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "partextras", force: :cascade do |t|
+    t.integer  "extra_id"
+    t.integer  "participant_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "kind"
+  end
+
+  add_index "partextras", ["extra_id"], name: "index_partextras_on_extra_id"
+  add_index "partextras", ["participant_id"], name: "index_partextras_on_participant_id"
+
   create_table "participants", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "ticket_id"
+    t.boolean  "appeared"
+    t.integer  "extra_id"
   end
+
+  add_index "participants", ["extra_id"], name: "index_participants_on_extra_id"
+  add_index "participants", ["ticket_id"], name: "index_participants_on_ticket_id"
 
   create_table "tickets", force: :cascade do |t|
     t.string   "kind"

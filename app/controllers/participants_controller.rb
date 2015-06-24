@@ -1,6 +1,8 @@
 class ParticipantsController < ApplicationController
-  before_action :set_participant, only: [:show, :edit, :update, :destroy]
+  before_action :set_participant, only: [:show, :edit, :update, :destroy,:addExtras,:remExtras]
   before_action :require_login
+
+
 
   # GET /participants
   # GET /participants.json
@@ -11,6 +13,7 @@ class ParticipantsController < ApplicationController
   # GET /participants/1
   # GET /participants/1.json
   def show
+    @partextras = Partextra.all
   end
 
   # GET /participants/new
@@ -22,6 +25,21 @@ class ParticipantsController < ApplicationController
   def edit
   end
 
+
+  def addExtras
+    Extra.set_test(@participant.id)
+    @extras = Extra.all
+  end
+
+  def remExtras
+    Extra.set_test(@participant.id)
+    @extras = Extra.all
+    @pextras= Partextra.all
+  end
+
+  
+
+
   # POST /participants
   # POST /participants.json
   def create
@@ -29,7 +47,7 @@ class ParticipantsController < ApplicationController
 
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
+        format.html { redirect_to "/participants", notice: 'Participant was successfully created.' }
         format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
@@ -43,7 +61,7 @@ class ParticipantsController < ApplicationController
   def update
     respond_to do |format|
       if @participant.update(participant_params)
-        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
+        format.html { redirect_to "/participants", notice: 'Participant was successfully updated.' }
         format.json { render :show, status: :ok, location: @participant }
       else
         format.html { render :edit }
@@ -62,6 +80,8 @@ class ParticipantsController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_participant
@@ -70,6 +90,6 @@ class ParticipantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def participant_params
-      params.require(:participant).permit(:name, :email)
+      params.require(:participant).permit(:name, :email, :appeared, :ticket_id)
     end
 end

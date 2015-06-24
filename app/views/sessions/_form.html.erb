@@ -1,15 +1,31 @@
 <%= form_for :session, url: session_path do |form| %>
   <div class="blue-text">
-    <div class="text-field">
-      <%= form.text_field :email, type: 'email', :placeholder=>"Email" %>
+
+
+
+
+
+    <div class = "topboxsignin2">
+      <div class="text-field">
+        <small><%= form.text_field :email, type: 'email', :placeholder=>"Email" ,:class=>"form-control"%></small>
+      </div>
     </div>
 
-    <div class="password-field">
-      <%= form.password_field :password, :placeholder=>"Password" %>
+    <div class = "topboxsignin2">
+      <div class="password-field">
+        <small><%= form.password_field :password, :placeholder=>"Password" ,:class=>"form-control"%></small>
+      </div>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
+
+    <div class = "topboxsignin2B">
+      <div class= "button">
+        <div class="submit-field">
+          <small><%= button_to "Sign in", sign_out_path, method: :get,:type =>type="button",:class=>'btn btn-danger' %></small>
+        </div>
+      </div>
     </div>
+    
+
   </div>
 <% end %>

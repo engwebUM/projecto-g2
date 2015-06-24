@@ -2,6 +2,8 @@
 
 <p id="notice"><%= notice %></p>
 
+
+<br><br><br><br><br>
 <p>
   <strong>Name:</strong>
   <%= @participant.name %>
@@ -10,6 +12,21 @@
 <p>
   <strong>Email:</strong>
   <%= @participant.email %>
+</p>
+
+<p>
+  <strong>Appeared:</strong>
+  <%= @participant.appeared %>
+</p>
+
+<p>
+  <strong>Extras:</strong>
+  <% @partextras.each do |partextra|  %>
+  	<% if partextra.participant_id==@participant.id %>
+  		<br>
+  		<%= partextra.kind %>
+   	<%end%>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_participant_path(@participant) %> |
