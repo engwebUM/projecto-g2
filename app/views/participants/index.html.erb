@@ -2,8 +2,10 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Participants</h1>
-
+<div class="title darkblue"> 
+  <br>Participants
+</div>
+<br><br>
 <table>
   <thead>
     <tr>
@@ -19,9 +21,10 @@
     <% @participants.each do |participant| %>
       <tr>
         <td>
-          <%= link_to "#{participant.name }", participant, method: :get %>
+          <%= link_to "#{participant.name}", participant, method: :get %>
         </td>
         <td><%= participant.email %></td>
+        
         <td><%= Ticket.where(id:(participant.ticket_id)).take.kind %></td>
         <td><%= participant.appeared ? 'Yes' : 'No' %></td>
           <td><%= link_to 'Add Extras', addExtras_path(participant), method: :get, :class=>'btn btn-danger' %></td>
@@ -36,7 +39,15 @@
 
 <br>
 
-<%= link_to "New Participant", new_participant_path, :class => "btn btn-primary btn-lg"%>
+<div class="hh4">
+  <%= link_to "New Participant", new_participant_path, :class => "btn btn-primary btn-lg"%>
+</div>
+
+<h2> Import Participants </h2>
+<%= form_tag import_participants_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "import" %>
+<% end %>
 
 <br><br><br><br>
 

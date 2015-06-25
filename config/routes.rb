@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :badges
+
   resources :extras do
     collection do
       put 'add_multiple'
@@ -13,11 +15,15 @@ Rails.application.routes.draw do
   end
 
 
-  resources :participants
+  resources :participants do 
+    collection {post :import}
+  end 
 
   resources :extras
 
   get 'home/index'
+  get 'home/statistics'
+
 
   resources :tickets
 
@@ -28,6 +34,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   Rails.application.routes.draw do
+  resources :badges
+
     resources :users, controller: 'users', only: Clearance.configuration.user_actions
   end
 
