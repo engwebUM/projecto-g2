@@ -2,31 +2,40 @@
 
 <%= form_tag rem_multiple_partextras_path, method: :delete do %>
 
+<div class="box-wall">
+    <br><br>
+    <div class="subtitle3 darkblue">
+      Remove Extras
+    </div>
 
-<h1>Rem Extras </h1>
-
-Remove extras to <%= @participant.name %>
   <br><br>
 
+    <div class= "subtitle darkblue">
+      Remove extras to <%= @participant.name %>
+    </div>
 
-  <% @pextras.each do |pextra|  %>
-    <% if pextra.participant_id== @participant.id %>
-    	<br>
-      <%= pextra.kind %>
-      <%= check_box_tag "partextras[]", pextra.id%>
-    <% end%>
+  <br><br>
+
+  <div class= "darkblue">
+    <% @pextras.each do |pextra|  %>
+      <% if pextra.participant_id== @participant.id %>
+      	<br>
+        <%= pextra.kind %>
+        <%= check_box_tag "partextras[]", pextra.id%>
+      <% end%>
+    <% end %>
+  </div>
+  
+    <br><br>
+    <div class="actions">
+      <%= button_to "Submit", participants_path, method: :submit,:type =>type="button",:class=>'btn btn-danger' %> 
+    </div>
+
   <% end %>
 
-  <br><br>
-  <div class="actions">
-    <%= button_to "Submit", participants_path, method: :submit,:type =>type="button",:class=>'btn btn-danger' %> 
+  <br><br><br><br>
+
+  <div class="other-links">
+    <%= link_to t('.Back'), participants_path  %>
   </div>
-
-<% end %>
-
-<br><br><br><br>
-
-<div class="other-links">
-  <%= link_to t('.Back'), participants_path  %>
 </div>
-

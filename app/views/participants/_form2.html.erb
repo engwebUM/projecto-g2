@@ -12,19 +12,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_field :name, :placeholder=>"Name" %>
+  <div class="text-field">
+    <%= f.text_field :name, :placeholder=>"Name",:class=>"form-control" %>
   </div>
-  <div class="field">
-    <%= f.text_field :email, :placeholder=>"Email" %>
+  <br>
+  <div class="text-field">
+    <%= f.text_field :email, :placeholder=>"Email",:class=>"form-control" %>
   </div>
   </div>
-
+  <br>
   <div class="bigwhitetext">
-    <div class="field">
+    <div class="field darkblue">
       Ticket <%= select(:participant,:ticket_id, Ticket.all.map { |ticket| [ticket.kind, ticket.id] })%>
     </div>
-    <div class="field">
+    <br>
+    <div class="field darkblue">
       Appeared <%= select(:participant,:appeared, [
         ['Yes', "true"],
         ['No', "false"],
