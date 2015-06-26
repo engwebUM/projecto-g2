@@ -1,0 +1,35 @@
+<%= render 'formTopBar' %>
+
+<div class="box-wall">
+
+	<div class="title darkblue"> 
+	  .: Statistics :.
+	</div>
+
+	<br><br>
+	<div class= "subtitle darkblue">
+		Number of participants: 
+		<div class="red">
+			<%= @number_of_participants %>
+		</div>
+	</div>
+
+	<br><br>
+	<%= high_chart("my_id1", @appeared) do |c| %>
+	          <%= raw "options.tooltip.formatter = function() {return  this.point.name +'</b>: '+ this.y +' %';}"  %>
+	          <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+	<% end %>
+
+	<br><br>
+
+	<%= high_chart("my_id2", @char_ticket)  %>
+
+	<br><br>
+
+	<%= high_chart("my_id3", @char_extra)  %>
+
+	<br><br>
+	<div class="backpage">
+	  <%= link_to 'Back', home_index_path %>
+	</div>
+</div>

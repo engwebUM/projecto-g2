@@ -1,14 +1,19 @@
 <%= render 'formTopBar' %>
 
-<h1>Menu</h1>
+<div class="title darkblue"> 
+	<br>.: BadgeRinG :.
+</div>
 
-<%= link_to "Participants", participants_path, :class => "btn btn-primary btn-lg"%>
 <br><br>
-<%= link_to "Tickets", tickets_path, :class => "btn btn-primary btn-lg"%>
-<br><br>
-<%= link_to "Extras", extras_path, :class => "btn btn-primary btn-lg"%>
-<br><br>
-<%= link_to "Badges", extras_path, :class => "btn btn-primary btn-lg"%>
-<br><br>
-<%= link_to "Statistics", extras_path, :class => "btn btn-primary btn-lg"%>
-<br><br>
+<div class="hh4">
+	<%= link_to "Participants", participants_path, :class => "btn btn-primary btn-lg"%>
+	<br><br>
+	<%= link_to "&nbsp;&nbsp;&nbsp;&nbsp;Tickets&nbsp;&nbsp;&nbsp".html_safe, tickets_path, :class => "btn btn-primary btn-lg"%>
+	<br><br>
+	<%= link_to "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extras&nbsp;&nbsp;&nbsp".html_safe, extras_path, :class => "btn btn-primary btn-lg"%>
+	<br><br>
+	<%= link_to "&nbsp;&nbsp;&nbsp;&nbsp;Badges&nbsp;&nbsp".html_safe, badges_path, :class => "btn btn-primary btn-lg"%>
+	<br><br>
+	<%= link_to "&nbsp;&nbsp;&nbsp;Statistics&nbsp".html_safe, home_statistics_path, :class => "btn btn-primary btn-lg"%>
+	<br><br>
+</div>

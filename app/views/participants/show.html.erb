@@ -2,32 +2,42 @@
 
 <p id="notice"><%= notice %></p>
 
+<div class="box-wall">
+    <br><br>
+    <div class="subtitle3 darkblue">
+      Participant
+    </div>
 
-<br><br><br><br><br>
-<p>
-  <strong>Name:</strong>
-  <%= @participant.name %>
-</p>
+  <br><br>
+  <div class= "darkblue">
+    <p>
+      <strong>Name:</strong>
+      <%= @participant.name %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @participant.email %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @participant.email %>
+    </p>
 
-<p>
-  <strong>Appeared:</strong>
-  <%= @participant.appeared %>
-</p>
+    <p>
+      <strong>Appeared:</strong>
+      <%= @participant.appeared %>
+    </p>
 
-<p>
-  <strong>Extras:</strong>
-  <% @partextras.each do |partextra|  %>
-  	<% if partextra.participant_id==@participant.id %>
-  		<br>
-  		<%= partextra.kind %>
-   	<%end%>
-  <% end %>
-</p>
+    <p>
+      <strong>Extras:</strong>
+      <% @partextras.each do |partextra|  %>
+      	<% if partextra.participant_id==@participant.id %>
+      		<br>
+      		<%= partextra.kind %>
+       	<%end%>
+      <% end %>
+    </p>
+  </div>
+  <br>
 
-<%= link_to 'Edit', edit_participant_path(@participant) %> |
-<%= link_to 'Back', participants_path %>
+  <%= link_to 'Edit', edit_participant_path(@participant) %> |
+  <%= link_to 'Back', participants_path %>
+
+</div>

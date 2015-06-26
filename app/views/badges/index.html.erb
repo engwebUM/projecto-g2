@@ -1,0 +1,79 @@
+<%= render './home/formTopBar' %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="title darkblue"> 
+  <br>.: Badges :.
+</div>
+
+<br><br>
+
+<% @badges.each do |badge| %>
+
+  <div class="badgefront">
+    <br>
+    <img src="/assets/img/logo.png" width="190" alt="logotipo" >
+    <br><br>
+    <div class= "dateFont">
+      September 13th-15th &nbsp&nbsp&nbsp&nbsp Braga-Portugal
+    </div>
+    <br><br><br>
+    <div class= "nameFont">
+      <%= Participant.all.where(id: badge.participant.id).last.name %>
+    </div>
+    <br><br><br>
+    <div class= "ticketFont">
+      Ticket: <%=Ticket.all.where(id: Participant.all.where(id: badge.participant.id).last.ticket_id).last.kind %>
+    </div>
+    <br>
+
+    <%if Partextra.all.where(participant_id:badge.participant.id).length >0 %>
+      <div class= "extrasFont">
+        <div class= "rose">
+          Extras: 
+        </div>
+        <% Partextra.all.where(participant_id:badge.participant.id).each do |extra| %>
+          -
+          <%= Extra.all.where(id:extra.extra_id).last.kind %>
+
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="badgeback">
+    <br>
+    <div class= "back_title_Font">
+      Usable phone numbers of Braga
+    </div>
+    <div class="numbers_Font">
+      <br>
+      National Relief Service ........................ 112
+      <br>
+      Telecom Informations ............ 118 or 1820
+      <br>
+      Town Council .......................... 253 203 150
+      <br>
+      Hospital of Braga .................... 253 027 000
+      <br>
+      CP Railways (Info) .................. 808 208 208
+      <br>
+      Central Trucking ..................... 253 209 400
+      <br>
+      Citizen Store ........................... 707 241 107
+      <br>
+      PSP (Police) ............................ 253 200 420
+      <br>
+      GNR (National Guard) ............ 253 203 030
+      <br>
+      City Council Police .................. 253 609 743
+      <br>
+      Taxis Central of Braga ............ 253 253 253
+      <br>
+    </div>
+  </div>
+
+  <br><br>
+<% end %>
+
+<br>

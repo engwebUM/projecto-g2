@@ -37,7 +37,10 @@ class ParticipantsController < ApplicationController
     @pextras= Partextra.all
   end
 
-  
+  def import
+    Participant.import(params[:file])
+    redirect_to participants_path , notice: 'Participants was successfully created.'
+  end
 
 
   # POST /participants
@@ -54,6 +57,7 @@ class ParticipantsController < ApplicationController
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
     end
+    Badge.create :participant_id => @participant.id
   end
 
   # PATCH/PUT /participants/1
@@ -78,6 +82,8 @@ class ParticipantsController < ApplicationController
       format.html { redirect_to participants_url, notice: 'Participant was successfully destroyed.' }
       format.json { head :no_content }
     end
+    Partextra.where(participant_id: @participant.id).destroy_all
+    Badge.where(participant_id: @participant.id).destroy_all
   end
 
 

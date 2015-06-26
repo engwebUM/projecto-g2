@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+gem 'lazy_high_charts'
+
 gem "font-awesome-rails"
 
 #grupo2

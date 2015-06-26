@@ -1,11 +1,17 @@
 <%= render './home/formTopBar' %>
 
-<h1>New Participant</h1>
+<div class="box-wall">
+    <br><br>
+    <div class="subtitle3 darkblue">
+	  New Participant
+	</div>
+	<br><br>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<br><br><br><br>
+	<br><br><br><br>
 
-<div class="other-links">
-  <%= link_to t('.Back'), participants_path  %>
+	<div class="other-links">
+	  <%= link_to t('.Back'), participants_path  %>
+	</div>
 </div>
