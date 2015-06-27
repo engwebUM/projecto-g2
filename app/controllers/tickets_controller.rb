@@ -59,7 +59,12 @@ class TicketsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tickets_url, notice: 'Ticket was successfully destroyed.' }
       format.json { head :no_content }
+    end 
+    Participant.all.where(ticket_id: @ticket.id).each do |participant|
+      Badge.where(participant_id: participant.id).destroy_all
+      Partextra.where(participant_id: participant.id).destroy_all
     end
+    Participant.all.where(ticket_id: @ticket.id).destroy_all
   end
 
   private

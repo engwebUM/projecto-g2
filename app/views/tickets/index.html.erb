@@ -22,7 +22,7 @@
         <td><%= ticket.kind %></td>
         <td><%= ticket.money %></td>
         <td><%= button_to "Edit", edit_ticket_path(ticket), method: :get, :class=>'btn btn-danger' %></td>
-        <td><%= button_to "Destroy", ticket, method: :delete, data: { confirm: 'Are you sure you want to remove the ticket '+ticket.kind+' from the list?' }, :class=>'btn btn-danger' %></td>
+        <td><%= button_to "Destroy", ticket, method: :delete, data: { confirm: 'Are you sure you want to remove the ticket '+ticket.kind+' from the list?' }, :class=>'btn btn-info' %></td>
       </tr>
     <% end %>
   </tbody>

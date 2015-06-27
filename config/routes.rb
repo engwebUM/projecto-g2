@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   resources :tickets
 
+  get '/participants/:id/gemBadge', to: 'participants#gemBadge', as: 'gemBadge'
+  get '/participants/:id/appeared', to: 'participants#appeared', as: 'appeared'
   get '/participants/:id/addExtras', to: 'participants#addExtras', as: 'addExtras'
   get '/participants/:id/remExtras', to: 'participants#remExtras', as: 'remExtras'
 

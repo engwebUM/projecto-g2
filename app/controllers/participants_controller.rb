@@ -1,5 +1,5 @@
 class ParticipantsController < ApplicationController
-  before_action :set_participant, only: [:show, :edit, :update, :destroy,:addExtras,:remExtras]
+  before_action :set_participant, only: [:show, :edit, :update, :destroy,:addExtras,:remExtras,:appeared,:gemBadge]
   before_action :require_login
 
 
@@ -25,6 +25,21 @@ class ParticipantsController < ApplicationController
   def edit
   end
 
+  def appeared
+    p= @participant
+    if p.appeared == false
+      p.appeared = true
+    else
+      p.appeared = false
+    end
+    p.save
+    redirect_to "/participants"
+  end
+
+  def gemBadge
+    Badge.create :participant_id => @participant.id
+    redirect_to "/participants"
+  end
 
   def addExtras
     Extra.set_test(@participant.id)
@@ -43,11 +58,11 @@ class ParticipantsController < ApplicationController
   end
 
 
+
   # POST /participants
   # POST /participants.json
   def create
     @participant = Participant.new(participant_params)
-
     respond_to do |format|
       if @participant.save
         format.html { redirect_to "/participants", notice: 'Participant was successfully created.' }
@@ -57,7 +72,6 @@ class ParticipantsController < ApplicationController
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
     end
-    Badge.create :participant_id => @participant.id
   end
 
   # PATCH/PUT /participants/1

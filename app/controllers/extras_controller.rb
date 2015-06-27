@@ -60,6 +60,7 @@ class ExtrasController < ApplicationController
       format.html { redirect_to extras_url, notice: 'Extra was successfully destroyed.' }
       format.json { head :no_content }
     end
+    Partextra.where(extra_id: @extra.id).destroy_all
   end
 
 

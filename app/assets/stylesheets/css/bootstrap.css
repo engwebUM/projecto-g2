@@ -3112,10 +3112,11 @@ fieldset[disabled] .btn-primary.active {
   background-color: #ffffff;
 }
 .btn-success {
-  color: #ffffff;
-  box-shadow: 1px 3px 1px #801F10;
-  background-color: #FF3D1F;
-  border-color: #FF3D1F;
+  color:#313E53;
+  background: white;
+  border-color: white;
+  transition:all 0.3s;
+  border-radius: 3px;
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -3123,10 +3124,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
-  color: #ffffff;
-  box-shadow: 1px 3px 1px #A38C30;
-  background-color: #FFDA4A;
-  border-color: #FFDA4A;
+  color: white;
+  background-color: #95a5a6;
+  border-color:  #95a5a6;
 }
 .btn-success:active,
 .btn-success.active,
@@ -3159,9 +3159,11 @@ fieldset[disabled] .btn-success.active {
   background-color: #ffffff;
 }
 .btn-info {
-  color: #ffffff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  color:white;
+  background:#E77C80;
+  border-color:  #E77C80;
+  transition:all 0.3s;
+  border-radius: 3px;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -3170,8 +3172,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
   color: #ffffff;
-  background-color: #31b0d5;
-  border-color: #269abc;
+  background-color: #DA5D62;
+  border-color:  #DA5D62;
 }
 .btn-info:active,
 .btn-info.active,
@@ -3204,9 +3206,11 @@ fieldset[disabled] .btn-info.active {
   background-color: #ffffff;
 }
 .btn-warning {
-  color: #ffffff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
+  color:white;
+  background:#FFCD65;
+  border-color: #FFCD65;
+  transition:all 0.3s;
+  border-radius: 3px;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -3215,8 +3219,8 @@ fieldset[disabled] .btn-info.active {
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
   color: #ffffff;
-  background-color: #ec971f;
-  border-color: #d58512;
+  background-color: #FFB81C;
+  border-color:  #FFB81C;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -3251,8 +3255,8 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger {
   color:white;
   background:#67C184;
-  border-color:  #57A26F;
-  transition:all 1.0s;
+  border-color: #67C184;
+  transition:all 0.3s;
   border-radius: 3px;
 }
 .btn-danger:hover,
@@ -3261,7 +3265,8 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger:active,
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
-  background:#47ae68;
+  background:#40955B;
+  border-color:#40955B;
   color: white;
 }
 .btn-danger:active,

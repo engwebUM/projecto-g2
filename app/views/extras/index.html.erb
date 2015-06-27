@@ -22,7 +22,7 @@
         <td><%= extra.kind %></td>
         <td><%= extra.money %></td>
         <td><%= button_to "Edit", edit_extra_path(extra), method: :get, :class=>'btn btn-danger' %></td>
-        <td><%= button_to "Destroy", extra, method: :delete, data: { confirm: 'Are you sure you want to remove the extra '+extra.kind+' from the list?' }, :class=>'btn btn-danger' %></td>
+        <td><%= button_to "Destroy", extra, method: :delete, data: { confirm: 'Are you sure you want to remove the extra '+extra.kind+' from the list?' }, :class=>'btn btn-info' %></td>
       </tr>
     <% end %>
   </tbody>

@@ -18,15 +18,17 @@
 
   <div class= "darkblue">
   <% @extras.each do |extra|  %>
-  	<br>
-    <%= extra.kind %>
-    <%= check_box_tag "extras[]", extra.id %>
+    <% if Partextra.all.where(extra_id: extra.id,participant_id:@participant.id).size ==0 %>
+    	<br>
+      <%= extra.kind %>
+      <%= check_box_tag "extras[]", extra.id %>
+    <% end %>
   <% end %>
   </div>
 
   <br><br>
   <div class="actions">
-    <%= button_to "Submit", participants_path, method: :submit,:type =>type="button",:class=>'btn btn-danger' %> 
+    <%= button_to "Add", participants_path, method: :submit,:type =>type="button",:class=>'btn btn-danger' %> 
   </div>
 
 <% end %>
