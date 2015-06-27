@@ -14,6 +14,16 @@
       <th>Email</th>
       <th>Ticket</th>
       <th>Appeared</td>
+      <th>Add Extras</td>
+      <% if Partextra.all.size>0 %>
+        <th>Remove Extras</td>
+      <% end %>
+      <th>Edit</td>
+      <th>Destroy</td>
+      <th>Appeared</td>
+      <% if Badge.all.size < Participant.all.size %>
+        <th>Generate Badge</td>
+      <% end %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,11 +38,21 @@
         
         <td><%= Ticket.where(id:(participant.ticket_id)).take.kind %></td>
         <td><%= participant.appeared ? 'Yes' : 'No' %></td>
-          <td><%= link_to 'Add Extras', addExtras_path(participant), method: :get, :class=>'btn btn-danger' %></td>
-          <td><%= link_to 'Rem Extras', remExtras_path(participant), method: :get, :class=>'btn btn-danger' %></td>
-
+        <td><%= link_to 'Add Extras', addExtras_path(participant), method: :get, :class=>'btn btn-danger' %></td>
+        <td>
+          <% if Partextra.all.where(participant_id:participant.id).size>0 %>
+            <%= link_to 'Rem Extras', remExtras_path(participant), method: :get, :class=>'btn btn-info' %>
+          <% end %>
+        </td>
         <td><%= button_to "Edit", edit_participant_path(participant), method: :get, :class=>'btn btn-danger' %></td>
-        <td><%= button_to "Destroy", participant, method: :delete, data: { confirm: 'Are you sure you want to remove the participant '+participant.name+' from the list?' }, :class=>'btn btn-danger' %></td>
+        <td><%= button_to "Destroy", participant, method: :delete, data: { confirm: 'Are you sure you want to remove the participant '+participant.name+' from the list?' }, :class=>'btn btn-info' %></td>
+        <td><%= link_to 'Appeared', appeared_path(participant), method: :get, :class=>'btn btn-warning' %></td>
+
+        <td>
+          <% if Badge.all.where(Participant_id: participant.id).size<1 %>
+            <%= link_to 'Gen Badge', gemBadge_path(participant), method: :get, :class=>'btn btn-success' %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -48,14 +68,15 @@
 <div class= "subtitle darkblue">
   Import Participants 
 </div>
-
-<div class="centro">
-  <br>
-  <%= form_tag import_participants_path, multipart: true do %>
-    <%= file_field_tag :file %>
+<div class= "whiteblue">
+  <div class="centro">
     <br>
-    <%= submit_tag "Import", :class=>'btn btn-danger' %>
-  <% end %>
+    <%= form_tag import_participants_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <br>
+      <%= submit_tag "Import", :class=>'btn btn-danger' %>
+    <% end %>
+  </div>
 </div>
 
 <br><br><br><br>

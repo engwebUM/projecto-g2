@@ -1,9 +1,19 @@
 <%= render './home/formTopBar' %>
 
-<h1>Editing Extra</h1>
+<div class="box-wall">
+	<br><br>
 
-<%= render 'form' %>
+	<div class="subtitle3 darkblue">
+		Editing Extra
+	</div>
 
-<br><br><br><br>
+	<%= render 'form' %>
 
-<div class="backpage"><%= button_to "Back", extras_path, method: :get, :class=>'btn btn-danger' %></div>
+	
+	<br><br><br><br>
+
+	<div class="other-links">
+	  <%= link_to t('.Back'), extras_path  %>
+	</div>
+
+</div>
