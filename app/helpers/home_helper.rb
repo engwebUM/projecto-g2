@@ -14,7 +14,7 @@ module HomeHelper
   def tickets
     LazyHighCharts::HighChart.new('graph') do |f|
       f.title(text: 'Number of Participants per Ticket')
-      f.xAxis(categories: @Typ)
+      f.xAxis(categories: Ticket.pluck('DISTINCT kind'))
       f.series(name: 'Participants', yAxis: 0, data: @number)
       f.yAxis [{ allowDecimals: false, title: { text: 'Participants', margin: 70 } }]
       f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')

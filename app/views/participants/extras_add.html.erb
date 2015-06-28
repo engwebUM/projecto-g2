@@ -1,41 +1,30 @@
 <%= render './home/formTopBar' %>
-
 <%= form_tag add_multiple_extras_path, method: :put do %>
-
 <div class="box-wall">
   <br><br>
   <div class="subtitle3 darkblue">
     Add Extras
   </div>
-  
   <br><br>
-
   <div class= "subtitle darkblue">
     Add extras to <%= @participant.name %>
   </div>
-  
   <br><br>
-
   <div class= "darkblue">
-  <% @extras.each do |extra|  %>
-    <% if Partextra.all.where(extra_id: extra.id,participant_id:@participant.id).size ==0 %>
-    	<br>
-      <%= extra.kind %>
-      <%= check_box_tag "extras[]", extra.id %>
+    <% @extras.each do |extra|  %>
+      <% if Partextra.all.where(extra_id: extra.id,participant_id:@participant.id).size ==0 %>
+    	  <br>
+        <%= extra.kind %>
+        <%= check_box_tag "extras[]", extra.id %>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
-
   <br><br>
   <div class="actions">
     <%= button_to "Add", participants_path, method: :submit,:type =>type="button",:class=>'btn btn-danger' %> 
   </div>
-
 <% end %>
-
 <br><br><br><br>
-
 <div class="other-links">
   <%= link_to t('.Back'), participants_path  %>
 </div>
-

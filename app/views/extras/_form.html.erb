@@ -3,15 +3,13 @@
     <% if @extra.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@extra.errors.count, "error") %> prohibited this extra from being saved:</h2>
-
         <ul>
-        <% @extra.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+          <% @extra.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
         </ul>
       </div>
     <% end %>
-
     <div class="text-field">
       <%= f.text_field :kind, :placeholder=>"Kind",:class=>"form-control" %>
     </div>
@@ -21,10 +19,9 @@
     </div>
     <br><br>
     <div class="blue-text">
-        <div class="actions">
-          <%= f.submit :class=>'btn btn-danger'%>
-        </div>
+      <div class="actions">
+        <%= f.submit :class=>'btn btn-danger'%>
       </div>
-
+    </div>
   </div>
 <% end %>
