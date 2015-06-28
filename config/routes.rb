@@ -27,10 +27,10 @@ Rails.application.routes.draw do
 
   resources :tickets
 
-  get '/participants/:id/gemBadge', to: 'participants#gemBadge', as: 'gemBadge'
+  get '/participants/:id/badge_gen', to: 'participants#badge_gen', as: 'badge_gen'
   get '/participants/:id/appeared', to: 'participants#appeared', as: 'appeared'
-  get '/participants/:id/addExtras', to: 'participants#addExtras', as: 'addExtras'
-  get '/participants/:id/remExtras', to: 'participants#remExtras', as: 'remExtras'
+  get '/participants/:id/extras_add', to: 'participants#extras_add', as: 'extras_add'
+  get '/participants/:id/extras_rem', to: 'participants#extras_rem', as: 'extras_rem'
 
 
   root 'home#index'
