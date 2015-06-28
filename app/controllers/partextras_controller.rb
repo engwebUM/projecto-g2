@@ -1,3 +1,4 @@
+# PartextrasController
 class PartextrasController < ApplicationController
   before_action :set_partextra, only: [:destroy]
   before_action :require_login
@@ -7,7 +8,7 @@ class PartextrasController < ApplicationController
   def destroy
     @partextra.destroy
     respond_to do |format|
-      format.html { redirect_to extras_url, notice: 'Partextra was successfully destroyed.' }
+      format.html { redirect_to extras_url }
       format.json { head :no_content }
     end
   end
@@ -27,7 +28,6 @@ class PartextrasController < ApplicationController
     @extra = Partextra.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def partextra_params
     params.require(:partextra).permit(:extra, :participant)
   end

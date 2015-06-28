@@ -1,3 +1,4 @@
+# TicketsController
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy, :badge_estra_destroy]
   before_action :require_login
@@ -33,7 +34,7 @@ class TicketsController < ApplicationController
         format.json { render :show, status: :created, location: @ticket }
       else
         format.html { render :new }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
+        format.json { render json: @ticket.errors }
       end
     end
   end
@@ -47,7 +48,7 @@ class TicketsController < ApplicationController
         format.json { render :show, status: :ok, location: @ticket }
       else
         format.html { render :edit }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
+        format.json { render json: @ticket.errors }
       end
     end
   end
@@ -78,7 +79,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def ticket_params
     params.require(:ticket).permit(:kind, :money, :participant)
   end

@@ -1,2 +1,3 @@
+# BadgesHelper
 module BadgesHelper
 end

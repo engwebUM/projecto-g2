@@ -1,2 +1,3 @@
+# ParticipantsHelper
 module ParticipantsHelper
 end

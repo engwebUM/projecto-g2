@@ -1,3 +1,4 @@
+# ExtrasController
 class ExtrasController < ApplicationController
   before_action :set_extra, only: [:show, :edit, :update, :destroy]
   before_action :require_login
@@ -30,10 +31,10 @@ class ExtrasController < ApplicationController
     respond_to do |format|
       if @extra.save
         format.html { redirect_to extras_path }
-        format.json { render :show, status: :created, location: @extra }
+        format.json { render :show }
       else
         format.html { render :new }
-        format.json { render json: @extra.errors, status: :unprocessable_entity }
+        format.json { render json: @extra.errors }
       end
     end
   end
@@ -47,7 +48,7 @@ class ExtrasController < ApplicationController
         format.json { render :show, status: :ok, location: @extra }
       else
         format.html { render :edit }
-        format.json { render json: @extra.errors, status: :unprocessable_entity }
+        format.json { render json: @extra.errors }
       end
     end
   end
@@ -64,10 +65,10 @@ class ExtrasController < ApplicationController
   end
 
   def add_multiple
-    @participant = Extra.test
+    @p = Extra.test
     @extras = Extra.find(params[:extras])
     @extras.reject! do |extra|
-      Partextra.create extra_id: extra.id, kind: extra.kind, participant_id: @participant
+      Partextra.create extra_id: extra.id, kind: extra.kind, participant_id: @p
     end
     redirect_to :back
   end
@@ -88,7 +89,6 @@ class ExtrasController < ApplicationController
     @extra = Extra.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def extra_params
     params.require(:extra).permit(:kind, :money, :participant)
   end

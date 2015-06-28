@@ -1,3 +1,4 @@
+# Extra
 class Extra < ActiveRecord::Base
   has_many :partextras
 

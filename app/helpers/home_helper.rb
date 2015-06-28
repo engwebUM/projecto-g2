@@ -1,3 +1,4 @@
+# HomeHelper
 module HomeHelper
   def pie
     LazyHighCharts::HighChart.new('pie') do |f|

@@ -1,3 +1,4 @@
+# ParticipantsController
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy, :extras_add, :extras_rem, :appeared, :badge_gen]
   before_action :require_login
@@ -65,7 +66,7 @@ class ParticipantsController < ApplicationController
         format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
+        format.json { render json: @participant.errors }
       end
     end
   end
@@ -79,7 +80,7 @@ class ParticipantsController < ApplicationController
         format.json { render :show, status: :ok, location: @participant }
       else
         format.html { render :edit }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
+        format.json { render json: @participant.errors }
       end
     end
   end
@@ -103,7 +104,6 @@ class ParticipantsController < ApplicationController
     @participant = Participant.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def participant_params
     params.require(:participant).permit(:name, :email, :appeared, :ticket_id)
   end

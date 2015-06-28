@@ -1,3 +1,4 @@
+# HomeController
 class HomeController < ApplicationController
   before_action :require_login
 
@@ -19,7 +20,8 @@ class HomeController < ApplicationController
 
   def pie_aux
     @total_part = Participant.pluck(:appeared).size
-    @total_total_part_true = Participant.pluck(:appeared).select { |a| a == true }.size
+    @part = Participant.pluck(:appeared)
+    @total_total_part_true = @part.select { |a| a == true }.size
     @percent = (@total_total_part_true.to_f / @total_part) * 100
     @number_of_participants = Participant.all.size
   end
