@@ -1,15 +1,10 @@
 <%= render './home/formTopBar' %>
-
 <p id="notice"><%= notice %></p>
-
 <div class="title darkblue"> 
   <br>.: Badges :.
 </div>
-
 <br><br>
-
 <% @badges.each do |badge| %>
-
   <div class="badgefront">
     <br>
     <img src="/assets/img/logo.png" width="190" alt="logotipo" >
@@ -26,7 +21,6 @@
       Ticket: <%=Ticket.all.where(id: Participant.all.where(id: badge.participant.id).last.ticket_id).last.kind %>
     </div>
     <br>
-
     <%if Partextra.all.where(participant_id:badge.participant.id).length >0 %>
       <div class= "extrasFont">
         <div class= "rose">
@@ -35,12 +29,10 @@
         <% Partextra.all.where(participant_id:badge.participant.id).each do |extra| %>
           -
           <%= Extra.all.where(id:extra.extra_id).last.kind %>
-
         <% end %>
       </div>
     <% end %>
   </div>
-
   <div class="badgeback">
     <br>
     <div class= "back_title_Font">
@@ -72,12 +64,10 @@
       <br>
     </div>
   </div>
-
   <br><br>
 <% end %>
-
-  <br><br>
-  <div class="backpage">
-    <%= link_to 'Back', home_index_path %>
-  </div>
+<br><br>
+<div class="backpage">
+  <%= link_to 'Back', home_index_path %>
+</div>
   

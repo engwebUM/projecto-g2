@@ -1,42 +1,35 @@
 <%= render './home/formTopBar' %>
-
 <p id="notice"><%= notice %></p>
-
 <div class="box-wall">
-    <br><br>
-    <div class="subtitle3 darkblue">
-      Participant
-    </div>
-
+  <br><br>
+  <div class="subtitle3 darkblue">
+    Participant
+  </div>
   <br><br>
   <div class= "darkblue">
     <p>
       <strong>Name:</strong>
       <%= @participant.name %>
     </p>
-
     <p>
       <strong>Email:</strong>
       <%= @participant.email %>
     </p>
-
     <p>
       <strong>Appeared:</strong>
       <%= @participant.appeared %>
     </p>
-
     <p>
       <strong>Extras:</strong>
       <% @partextras.each do |partextra|  %>
       	<% if partextra.participant_id==@participant.id %>
       		<br>
       		<%= partextra.kind %>
-       	<%end%>
+       	<% end %>
       <% end %>
     </p>
   </div>
   <br>
-
   <% if Badge.all.where(Participant_id: @participant.id).size>0 %>
     <div class="badgefront">
       <br>
@@ -54,7 +47,6 @@
         Ticket: <%=Ticket.all.where(id: Participant.all.where(id: @participant.id).last.ticket_id).last.kind %>
       </div>
       <br>
-
       <%if Partextra.all.where(participant_id:@participant.id).length >0 %>
         <div class= "extrasFont">
           <div class= "rose">
@@ -64,12 +56,11 @@
             <% if partextra.participant_id==@participant.id %>
               -
               <%= partextra.kind %>
-            <%end%>
+            <% end %>
           <% end %>
         </div>
       <% end %>
     </div>
-
     <div class="badgeback">
       <br>
       <div class= "back_title_Font">
@@ -102,7 +93,6 @@
       </div>
     </div>
   <%end%>
-
   <br><br><br>
   <%= link_to 'Edit', edit_participant_path(@participant) %> |
   <%= link_to 'Back', participants_path %>

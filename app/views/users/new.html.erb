@@ -2,19 +2,14 @@
   <div class="rubyconfhome"></div>
   <div class="topboxsignin"><%= render partial: '/sessions/form' %></div>
 </div>
-
-
 <div class="box-wall">
   <div id="clearance" class="sign-up">
     <br><br><br>
-
-  <div class="subtitle3 darkblue"> 
+    <div class="subtitle3 darkblue"> 
       <%= t('.title') %>
     </div>
-
     <%= form_for @user do |form| %>
       <%= render partial: '/users/form', object: form %>
-
       <div class= "button">
         <div class="submit-field">
           <small>
