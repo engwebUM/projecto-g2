@@ -1,3 +1,4 @@
+# Ticket
 class Ticket < ActiveRecord::Base
-	belongs_to :participant
+  belongs_to :participant
 end

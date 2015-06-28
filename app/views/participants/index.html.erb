@@ -38,10 +38,10 @@
         
         <td><%= Ticket.where(id:(participant.ticket_id)).take.kind %></td>
         <td><%= participant.appeared ? 'Yes' : 'No' %></td>
-        <td><%= link_to 'Add Extras', addExtras_path(participant), method: :get, :class=>'btn btn-danger' %></td>
+        <td><%= link_to 'Add Extras', extras_add_path(participant), method: :get, :class=>'btn btn-danger' %></td>
         <td>
           <% if Partextra.all.where(participant_id:participant.id).size>0 %>
-            <%= link_to 'Rem Extras', remExtras_path(participant), method: :get, :class=>'btn btn-info' %>
+            <%= link_to 'Rem Extras', extras_rem_path(participant), method: :get, :class=>'btn btn-info' %>
           <% end %>
         </td>
         <td><%= button_to "Edit", edit_participant_path(participant), method: :get, :class=>'btn btn-danger' %></td>
@@ -50,7 +50,7 @@
 
         <td>
           <% if Badge.all.where(Participant_id: participant.id).size<1 %>
-            <%= link_to 'Gen Badge', gemBadge_path(participant), method: :get, :class=>'btn btn-success' %>
+            <%= link_to 'Gen Badge', badge_gen_path(participant), method: :get, :class=>'btn btn-success' %>
           <% end %>
         </td>
       </tr>
